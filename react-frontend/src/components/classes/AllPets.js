@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import CreatePet from "./CreatePet";
+import { Link } from "react-router-dom";
 
 class AllPets extends React.Component {
   state = {
@@ -92,9 +93,12 @@ class AllPets extends React.Component {
               <button onClick={() => this.adoptPet(pet._id)}>
                 Adopt {pet.name}
               </button>
+              {/* 
               <button onClick={() => this.findPetInfo(pet._id)}>
                 Learn more
-              </button>
+              </button> */}
+
+              <Link to={`/pets/${pet._id}`}>Learn More</Link>
             </div>
           );
         })}

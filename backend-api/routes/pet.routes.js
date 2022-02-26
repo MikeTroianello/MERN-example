@@ -9,14 +9,15 @@ router.get("/", (req, res, next) => {
 router.post("/create", (req, res, next) => {
   if (req.body.name === "Mittens" || req.body.name === "mittens") {
     res.json("Mittens has found a good home");
+  } else {
+    Pet.create(req.body)
+      .then((results) => {
+        res.json(results);
+      })
+      .catch((err) => {
+        res.json(err.message);
+      });
   }
-  Pet.create(req.body)
-    .then((results) => {
-      res.json(results);
-    })
-    .catch((err) => {
-      res.json(err.message);
-    });
 });
 
 router.get("/all-pets", (req, res) => {
