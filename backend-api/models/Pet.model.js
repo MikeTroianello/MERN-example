@@ -16,6 +16,10 @@ const petSchema = new Schema(
       type: String,
       enum: ["cat", "dog"],
     },
+    image: {
+      type: String,
+      required: false,
+    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

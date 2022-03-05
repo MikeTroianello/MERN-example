@@ -1,9 +1,16 @@
 const router = require("express").Router();
 const Pet = require("../models/Pet.model");
 
+const fileUploader = require("../config/cloudinary.config");
+
 /* GET home page */
 router.get("/", (req, res, next) => {
   res.json({ message: "PETS" });
+});
+
+router.post("/upload-image", fileUploader.single("imageUrl"), (req, res) => {
+  console.log("FILE", req.file);
+  res.json(req.file);
 });
 
 router.post("/create", (req, res, next) => {
