@@ -39,6 +39,18 @@ class AuthService {
         console.log(err.message);
       });
   };
+
+  handleUpload = (img) => {
+    return this.service
+      .post("/pet/upload-image", img)
+      .then((results) => {
+        console.log(results.data);
+        return results.data;
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 }
 
 // class AuthService is used to organize and group the methods.

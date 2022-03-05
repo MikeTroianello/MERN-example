@@ -89,7 +89,7 @@ class AllPets extends React.Component {
               <p>
                 {pet.name} the {pet.typeOfAnimal}
               </p>
-              <p>{pet._id}</p>
+              <img src={pet.image} alt="pet pic" height="100" width="100" />
               <button onClick={() => this.adoptPet(pet._id)}>
                 Adopt {pet.name}
               </button>
