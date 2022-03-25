@@ -5,7 +5,8 @@ import axios from "axios";
 class AuthService {
   constructor() {
     this.service = axios.create({
-      baseURL: "http://localhost:5005/api",
+      baseURL: "https://limitless-cove-93068.herokuapp.com/api",
+      // baseURL: "http://localhost:5005/api",
       withCredentials: true,
     });
   }
